@@ -25,7 +25,7 @@ struct_gauge_data GaugeData;
 #define TAG "TWAI"
 
 // CONTROL CONSTANTS
-const int AVERAGE_VALUES      = 20;
+const int AVERAGE_VALUES      = 32;
 const int SCALE_MIN           = -20;
 const int SCALE_MAX           = 140;
 const int SCALE_TICKS_COUNT   = 9;
