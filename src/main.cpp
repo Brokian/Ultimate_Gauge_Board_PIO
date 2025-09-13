@@ -246,7 +246,7 @@ void Process_Coolant_Temp(uint8_t *byte_data) {
 
 // task to avoid blocking LVGL with CAN receive
 void Receive_CAN_Task(void *arg) {
-<<<<<<< HEAD
+
   // Register this task with the watchdog
   esp_task_wdt_add(NULL);
 
@@ -276,22 +276,8 @@ void Receive_CAN_Task(void *arg) {
           default:
             break;
         }
-=======
-    while (1) {
-      twai_message_t message;
-      esp_err_t err = twai_receive(&message, pdMS_TO_TICKS(1000));
-      if (err == ESP_OK) {
-          Serial.print("Received CAN message: ID=0x");
-          Serial.print(message.identifier, HEX);
-          Serial.print(" DLC=");
-          Serial.print(message.data_length_code);
-          Serial.print(" Data=");
-          for (int i = 0; i < message.data_length_code; i++) {
-            Serial.printf("%02X ", message.data[i]);
-          }
-          
-          Serial.println();
->>>>>>> 77a0978 (Update AVERAGE_VALUES constant to improve data accuracy)
+
+        
 
         Set_EXIO(EXIO_PIN4, High);
     } else if (err == ESP_ERR_TIMEOUT) {
